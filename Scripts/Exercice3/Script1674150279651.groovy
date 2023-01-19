@@ -19,11 +19,23 @@ import org.openqa.selenium.Keys as Keys
 
 Mobile.startApplication('C:\\Users\\MohamedAmineAjengui\\OneDrive - Aymax Technology\\Bureau\\ApiDemos-debug.apk', true)
 
-Mobile.tap(findTestObject('Object Repository/Page_Home/android.widget.TextView - Graphics'), 0)
+Mobile.switchToLandscape()
+
+Mobile.tap(findTestObject('android.widget.TextView - Graphics'), 0)
 
 Mobile.scrollToText('Xfermodes')
 
-Mobile.verifyElementVisible(findTestObject('Page_Graphics/android.widget.TextView - Xfermodes'), 0)
+Mobile.takeScreenshot('C:\\Users\\MOHAME~1\\AppData\\Local\\Temp\\screenshot6495840029627082010.png')
+
+Mobile.switchToPortrait()
+
+Mobile.scrollToText('FingerPaint')
+
+Mobile.scrollToText('Xfermodes')
+
+Mobile.scrollToText('AlphaBitmap', FailureHandling.STOP_ON_FAILURE)
+
+Mobile.verifyElementVisible(findTestObject('Page_Graphics/android.widget.TextView - AlphaBitmap'), 0)
 
 Mobile.closeApplication()
 
